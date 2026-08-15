@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "id": "com.xtreamplay.app",
+      "title": "Xtream Play",
+      "manifestUrl": "https://raw.githubusercontent.com/limonada77/novatv-webos/main/com.xtreamplay.app.manifest.json"
+    }
+  ]
+}
