@@ -19,7 +19,7 @@
         "rootRequired": false,
         "ipkUrl": "https://raw.githubusercontent.com/limonada77/novatv-webos/main/releases/com.xtreamplay.app_1.0.2_all.ipk",
         "ipkHash": {
-          "sha256": "64e303cdc574f9a55fa927c6feeaea15d65f63eed209d81cd79799186ecae2d7"
+          "sha256": "38ccaeff555dbccc3714ac323f88257aa0f363664726fc303fbef3d1e0e5f08b"
         }
       }
     }
