@@ -1,0 +1,62 @@
+name: Build IPK webOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-ipk:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar webOS CLI oficial
+        run: npm install -g @webos-tools/cli
+
+      - name: Verificar CLI
+        run: |
+          ares -V
+          which ares-package
+
+      - name: Preparar fonte do app
+        run: |
+          rm -rf webos-app
+          mkdir -p webos-app
+
+          cp -R appinfo.json webos-app/
+          cp -R index.html webos-app/
+
+          [ -d css ] && cp -R css webos-app/
+          [ -d js ] && cp -R js webos-app/
+          [ -d img ] && cp -R img webos-app/
+
+          echo "Conteúdo:"
+          find webos-app -maxdepth 3 -type f | sort
+
+      - name: Gerar IPK
+        run: |
+          mkdir -p artifacts
+          ares-package webos-app -o artifacts
+
+          echo "IPK gerado:"
+          find artifacts -type f -name "*.ipk" -ls
+
+      - name: Calcular SHA256
+        run: |
+          sha256sum artifacts/*.ipk
+
+      - name: Upload IPK
+        uses: actions/upload-artifact@v4
+        with:
+          name: XtreamPlay-webOS-IPK
+          path: artifacts/*.ipk
+          if-no-files-found: error
