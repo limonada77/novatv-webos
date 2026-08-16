@@ -1,8 +1,17 @@
 {
-  "id": "com.novatv.player",
+  "id": "com.xtreamplay.app",
   "version": "1.0.0",
-  "vendor": "NovaTV",
+  "vendor": "XtreamPlay",
   "type": "web",
   "main": "index.html",
-  "title": "NovaTV"
+  "title": "XtreamPlay",
+  "icon": "img/icon.png",
+  "largeIcon": "img/largeIcon.png",
+  "splashBackground": "img/splash.png",
+  "bgColor": "#070b14",
+  "iconColor": "#0ea5e9",
+  "resolution": "1920x1080",
+  "disableBackHistoryAPI": true,
+  "supportTouchMode": "none",
+  "requiredPermissions": ["time.query", "media.operation"]
 }

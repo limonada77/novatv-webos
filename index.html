@@ -1,31 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>NovaTV webOS</title>
-  <style>
-    body {
-      margin: 0;
-      background: #05070a;
-      color: white;
-      font-family: Arial, sans-serif;
-      display: grid;
-      place-items: center;
-      width: 100vw;
-      height: 100vh;
-    }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1" />
+    <title>XtreamPlay</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- LOGIN -->
+    <section id="login" class="screen active">
+      <div class="login-card">
+        <h1 class="brand">Xtream<span>Play</span></h1>
+        <p class="sub">Entre com sua conta Xtream Codes</p>
+        <form id="loginForm" autocomplete="off">
+          <label>Servidor (http://host:porta)
+            <input id="f_host" type="text" placeholder="http://exemplo.com:8080" />
+          </label>
+          <label>Usuário
+            <input id="f_user" type="text" placeholder="usuario" />
+          </label>
+          <label>Senha
+            <input id="f_pass" type="password" placeholder="senha" />
+          </label>
+          <button id="btnLogin" type="submit" class="btn primary">Entrar</button>
+        </form>
+        <p id="loginMsg" class="msg"></p>
+        <p class="hint">Use as setas do controle para navegar e OK para selecionar.</p>
+      </div>
+    </section>
 
-    h1 {
-      font-size: 64px;
-    }
+    <!-- BROWSE -->
+    <section id="browse" class="screen">
+      <header class="topbar">
+        <div class="logo">Xtream<span>Play</span></div>
+        <nav class="tabs" id="tabs">
+          <button class="tab focusable" data-type="live">Canais</button>
+          <button class="tab focusable" data-type="vod">Filmes</button>
+          <button class="tab focusable" data-type="series">Séries</button>
+        </nav>
+        <div class="spacer"></div>
+        <input id="search" class="search focusable" type="text" placeholder="Buscar..." />
+        <span id="userInfo" class="userinfo"></span>
+        <button id="btnLogout" class="btn ghost focusable">Sair</button>
+      </header>
+      <main class="content">
+        <aside class="panel">
+          <h2>Categorias</h2>
+          <ul id="catList" class="list"></ul>
+        </aside>
+        <section class="panel wide">
+          <h2 id="itemsTitle">Itens</h2>
+          <ul id="itemList" class="list grid"></ul>
+        </section>
+      </main>
+      <div id="loader" class="loader hidden"><div class="spin"></div></div>
+      <p id="browseMsg" class="msg center"></p>
+    </section>
 
-    span {
-      color: #ff7200;
-    }
-  </style>
-</head>
-<body>
-  <h1>NOVA<span>TV</span></h1>
-</body>
+    <!-- PLAYER -->
+    <section id="player" class="screen player">
+      <video id="video" playsinline webkit-playsinline></video>
+      <div id="pOverlay" class="overlay">
+        <div class="ptitle" id="pTitle"></div>
+        <div class="pstate" id="pState">Carregando…</div>
+        <div class="phint">OK: pausar/continuar &nbsp;·&nbsp; VOLTAR: sair</div>
+      </div>
+    </section>
+
+    <script src="js/hls.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
 </html>
