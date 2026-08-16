@@ -1,6 +1,6 @@
 {
   "id": "com.xtreamplay.app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "vendor": "XtreamPlay",
   "type": "web",
   "main": "index.html",
@@ -13,5 +13,8 @@
   "resolution": "1920x1080",
   "disableBackHistoryAPI": true,
   "supportTouchMode": "none",
-  "requiredPermissions": ["time.query", "media.operation"]
+  "requiredPermissions": [
+    "time.query",
+    "media.operation"
+  ]
 }
