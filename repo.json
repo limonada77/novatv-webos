@@ -11,13 +11,13 @@
       "title": "Xtream Play",
       "manifest": {
         "id": "com.xtreamplay.app",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "type": "web",
         "title": "Xtream Play",
         "appDescription": "Player Xtream e M3U para LG webOS",
         "sourceUrl": "https://github.com/limonada77/novatv-webos",
         "rootRequired": false,
-        "ipkUrl": "https://raw.githubusercontent.com/limonada77/novatv-webos/main/releases/com.xtreamplay.app_1.0.1_all.ipk",
+        "ipkUrl": "https://raw.githubusercontent.com/limonada77/novatv-webos/main/releases/com.xtreamplay.app_1.0.2_all.ipk",
         "ipkHash": {
           "sha256": "64e303cdc574f9a55fa927c6feeaea15d65f63eed209d81cd79799186ecae2d7"
         }
